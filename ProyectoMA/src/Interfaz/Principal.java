@@ -5,11 +5,10 @@
  */
 package Interfaz;
 
-import AppPackage.AnimationClass;
-import Controlador.Controller;
-import Objetos.Rol;
-import Pruebas.Controlador;
 
+
+
+import Controladores.Controller;
 import java.awt.Desktop;
 import java.net.URI;
 import javax.swing.JOptionPane;
@@ -19,14 +18,14 @@ import javax.swing.JOptionPane;
  * @author HP
  */
 public class Principal extends javax.swing.JFrame {
-
+int cont=0;
     /**
      * Creates new form Principal
      */
     public Principal() {
         initComponents();
-        jPMenu2.setVisible(false);
-        jPAgendar.setVisible(false);
+        
+        jPBienvenda.setVisible(false);
         this.setLocationRelativeTo(null);
     }
 
@@ -56,9 +55,8 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPSalir = new javax.swing.JPanel();
-        jlSalir = new javax.swing.JLabel();
-        jlMinimizar = new javax.swing.JLabel();
+        jPBienvenda = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
         jPIngreso = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -74,77 +72,25 @@ public class Principal extends javax.swing.JFrame {
         jlMusica = new javax.swing.JLabel();
         jlCalculadora = new javax.swing.JLabel();
         jlInternet = new javax.swing.JLabel();
-        jPMenu1 = new javax.swing.JPanel();
-        jPMenu2 = new javax.swing.JPanel();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jBagendar = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jbSalir1 = new javax.swing.JButton();
-        jPAgendar = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jtUsuario1 = new javax.swing.JTable();
-        btUsU1 = new javax.swing.JButton();
-        btUsD1 = new javax.swing.JButton();
-        txUsS = new javax.swing.JTextField();
-        btRlUPS1 = new javax.swing.JButton();
-        btRlUPN1 = new javax.swing.JButton();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        txUsCed = new javax.swing.JTextField();
-        txUsId = new javax.swing.JTextField();
-        btUsG = new javax.swing.JButton();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        txUsNom = new javax.swing.JTextField();
-        txUsApe = new javax.swing.JTextField();
-        txUsCor = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        txUsTel = new javax.swing.JTextField();
-        txUsCon = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        txUsDir = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        cbRol = new javax.swing.JComboBox<>();
-        jbSalir = new javax.swing.JButton();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
+        jPSalir = new javax.swing.JPanel();
+        jlSalir = new javax.swing.JLabel();
+        jlMinimizar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPSalir.setBackground(new java.awt.Color(255, 255, 255));
-        jPSalir.setForeground(new java.awt.Color(255, 255, 255));
-        jPSalir.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPBienvenda.setBackground(new java.awt.Color(51, 51, 51));
+        jPBienvenda.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jlSalir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Multiply_32px.png"))); // NOI18N
-        jlSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jlSalir.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jlSalirMouseClicked(evt);
-            }
-        });
-        jPSalir.add(jlSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 0, 30, 30));
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("BIENVENIDO");
+        jPBienvenda.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 290, 230));
 
-        jlMinimizar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlMinimizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Expand_Arrow_32px.png"))); // NOI18N
-        jlMinimizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jlMinimizar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jlMinimizarMouseClicked(evt);
-            }
-        });
-        jPSalir.add(jlMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 0, -1, 30));
-
-        getContentPane().add(jPSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 40));
+        getContentPane().add(jPBienvenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 290, 540));
 
         jPIngreso.setBackground(new java.awt.Color(255, 255, 255));
         jPIngreso.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
@@ -263,272 +209,33 @@ public class Principal extends javax.swing.JFrame {
         });
         jPIngreso.add(jlInternet, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 60, 40, 40));
 
-        getContentPane().add(jPIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 580));
+        getContentPane().add(jPIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 290, 550));
 
-        jPMenu1.setBackground(new java.awt.Color(255, 255, 255));
-        jPMenu1.setForeground(new java.awt.Color(255, 255, 255));
-        jPMenu1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(jPMenu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 760, 530));
+        jPSalir.setBackground(new java.awt.Color(255, 255, 255));
+        jPSalir.setForeground(new java.awt.Color(255, 255, 255));
+        jPSalir.setLayout(new javax.swing.BoxLayout(jPSalir, javax.swing.BoxLayout.LINE_AXIS));
 
-        jPMenu2.setBackground(new java.awt.Color(255, 255, 255));
-        jPMenu2.setForeground(new java.awt.Color(255, 255, 255));
-        jPMenu2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jButton4.setBackground(new java.awt.Color(255, 99, 71));
-        jButton4.setForeground(new java.awt.Color(255, 99, 71));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Clock_96px.png"))); // NOI18N
-        jButton4.setText("HORARIOS");
-        jButton4.setBorder(null);
-        jButton4.setBorderPainted(false);
-        jButton4.setContentAreaFilled(false);
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+        jlSalir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Multiply_32px.png"))); // NOI18N
+        jlSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jlSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jlSalirMouseClicked(evt);
             }
         });
-        jPMenu2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, -1, -1));
+        jPSalir.add(jlSalir);
 
-        jButton5.setBackground(new java.awt.Color(255, 99, 71));
-        jButton5.setForeground(new java.awt.Color(255, 99, 71));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Google_Drive_96px.png"))); // NOI18N
-        jButton5.setText("RUTAS");
-        jButton5.setBorder(null);
-        jButton5.setBorderPainted(false);
-        jButton5.setContentAreaFilled(false);
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+        jlMinimizar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlMinimizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Expand_Arrow_32px.png"))); // NOI18N
+        jlMinimizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jlMinimizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jlMinimizarMouseClicked(evt);
             }
         });
-        jPMenu2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 140, -1, -1));
+        jPSalir.add(jlMinimizar);
 
-        jButton3.setBackground(new java.awt.Color(255, 99, 71));
-        jButton3.setForeground(new java.awt.Color(255, 99, 71));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Idea_96px.png"))); // NOI18N
-        jButton3.setText("AGENDAR");
-        jButton3.setBorder(null);
-        jButton3.setBorderPainted(false);
-        jButton3.setContentAreaFilled(false);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        jPMenu2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 330, -1, -1));
-
-        jButton9.setBackground(new java.awt.Color(255, 99, 71));
-        jButton9.setForeground(new java.awt.Color(255, 99, 71));
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Maintenance_96px.png"))); // NOI18N
-        jButton9.setText("AGENDAR");
-        jButton9.setBorder(null);
-        jButton9.setBorderPainted(false);
-        jButton9.setContentAreaFilled(false);
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
-            }
-        });
-        jPMenu2.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 340, -1, 100));
-
-        jBagendar.setBackground(new java.awt.Color(255, 99, 71));
-        jBagendar.setForeground(new java.awt.Color(255, 99, 71));
-        jBagendar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Today_96px.png"))); // NOI18N
-        jBagendar.setText("AGENDAR");
-        jBagendar.setBorder(null);
-        jBagendar.setBorderPainted(false);
-        jBagendar.setContentAreaFilled(false);
-        jBagendar.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                jBagendarMouseMoved(evt);
-            }
-        });
-        jBagendar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jBagendarMouseExited(evt);
-            }
-        });
-        jBagendar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBagendarActionPerformed(evt);
-            }
-        });
-        jPMenu2.add(jBagendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 180, 160));
-
-        jButton6.setBackground(new java.awt.Color(255, 99, 71));
-        jButton6.setForeground(new java.awt.Color(255, 99, 71));
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Handshake_96px.png"))); // NOI18N
-        jButton6.setText("COOPERATIVA");
-        jButton6.setBorder(null);
-        jButton6.setBorderPainted(false);
-        jButton6.setContentAreaFilled(false);
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-        jPMenu2.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 350, -1, -1));
-
-        jbSalir1.setText("<--  SALIR");
-        jbSalir1.setBorderPainted(false);
-        jbSalir1.setContentAreaFilled(false);
-        jbSalir1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbSalir1ActionPerformed(evt);
-            }
-        });
-        jPMenu2.add(jbSalir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 490, -1, -1));
-
-        getContentPane().add(jPMenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 1050, 530));
-
-        jPAgendar.setBackground(new java.awt.Color(255, 255, 255));
-        jPAgendar.setForeground(new java.awt.Color(255, 255, 255));
-        jPAgendar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-
-        jtUsuario1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {},
-                {},
-                {},
-                {}
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane3.setViewportView(jtUsuario1);
-
-        btUsU1.setText("Editar");
-        btUsU1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btUsU1ActionPerformed(evt);
-            }
-        });
-
-        btUsD1.setText("Eliminar");
-        btUsD1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btUsD1ActionPerformed(evt);
-            }
-        });
-
-        btRlUPS1.setText("S");
-        btRlUPS1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btRlUPS1ActionPerformed(evt);
-            }
-        });
-
-        btRlUPN1.setText("N");
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 890, Short.MAX_VALUE)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(btUsU1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btUsD1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btRlUPS1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(btRlUPN1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txUsS, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btUsU1)
-                        .addComponent(btUsD1)
-                        .addComponent(txUsS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btRlUPS1)
-                    .addComponent(btRlUPN1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jPAgendar.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 910, 220));
-
-        jLabel23.setText("Id");
-        jPAgendar.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
-
-        jLabel24.setText("Cedula");
-        jPAgendar.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, -1, -1));
-        jPAgendar.add(txUsCed, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 100, -1));
-        jPAgendar.add(txUsId, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 20, -1));
-
-        btUsG.setText("Guardar");
-        btUsG.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btUsGActionPerformed(evt);
-            }
-        });
-        jPAgendar.add(btUsG, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 70, -1, -1));
-
-        jLabel25.setText("Nombre");
-        jPAgendar.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, -1, -1));
-
-        jLabel26.setText("Apellido");
-        jPAgendar.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 40, -1, -1));
-        jPAgendar.add(txUsNom, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 120, -1));
-        jPAgendar.add(txUsApe, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 40, 140, -1));
-        jPAgendar.add(txUsCor, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 40, 130, -1));
-
-        jLabel7.setText("Correo");
-        jPAgendar.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 40, -1, -1));
-
-        jLabel8.setText("Telefono");
-        jPAgendar.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 40, -1, -1));
-        jPAgendar.add(txUsTel, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 40, 110, -1));
-        jPAgendar.add(txUsCon, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 90, -1));
-
-        jLabel9.setText("Direccion");
-        jPAgendar.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, -1, -1));
-
-        jLabel10.setText("Contraseña");
-        jPAgendar.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, -1, -1));
-        jPAgendar.add(txUsDir, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, 330, -1));
-
-        jLabel11.setText("Rol");
-        jPAgendar.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 70, -1, -1));
-
-        cbRol.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbRolActionPerformed(evt);
-            }
-        });
-        jPAgendar.add(cbRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 70, 120, -1));
-
-        jbSalir.setText("REGRESAR");
-        jbSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbSalirActionPerformed(evt);
-            }
-        });
-        jPAgendar.add(jbSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 480, -1, -1));
-
-        jLabel21.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel21.setText("Buscar...");
-        jLabel21.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 99, 71)));
-        jPAgendar.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 230, 30));
-
-        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Search_32px_2.png"))); // NOI18N
-        jPAgendar.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 350, -1, -1));
-
-        getContentPane().add(jPAgendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1050, 520));
+        getContentPane().add(jPSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -542,23 +249,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jtxtPassActionPerformed
 
     private void jlMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlMenuMouseClicked
-        AnimationClass internet = new AnimationClass();
-////        //(posActua,Adonde,veloc,veloc,nombre_objeto)
-        internet.jLabelXRight(-40, 10, 10, 5, jlInternet);
-        //----->mostrar
-        //y
-        //<-----ocultar
-        AnimationClass internet2 = new AnimationClass();
-        internet2.jLabelXLeft(10, -40, 10, 5, jlInternet);
-
-        AnimationClass cal = new AnimationClass();
-        cal.jLabelXRight(-40, 10, 10, 5, jlCalculadora);
-        AnimationClass calc2 = new AnimationClass();
-        calc2.jLabelXLeft(10, -40, 10, 5, jlCalculadora);
-        AnimationClass music = new AnimationClass();
-        music.jLabelXRight(-40, 10, 10, 5, jlMusica);
-        AnimationClass music2 = new AnimationClass();
-        music2.jLabelXLeft(10, -40, 10, 5, jlMusica);
+    
     }//GEN-LAST:event_jlMenuMouseClicked
 
     private void jlMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlMinimizarMouseClicked
@@ -591,51 +282,22 @@ public class Principal extends javax.swing.JFrame {
         youtube();
     }//GEN-LAST:event_jlMusicaMouseClicked
 
-    private void jBagendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBagendarActionPerformed
-        this.jPAgendar.setVisible(true);
-        jPIngreso.setVisible(false);
-        jPMenu2.setVisible(false);
-        jPMenu1.setVisible(false);
-    }//GEN-LAST:event_jBagendarActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
-
-    private void jBagendarMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBagendarMouseMoved
-        jBagendar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(238, 111, 82)));
-    }//GEN-LAST:event_jBagendarMouseMoved
-
-    private void jBagendarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBagendarMouseExited
-          jBagendar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-    }//GEN-LAST:event_jBagendarMouseExited
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       Controller control=new Controller();
+       
+        Controller control=new Controller();
        Boolean resp= control.login();
+        System.out.println(resp);
        if (resp==true){
+           jPBienvenda.setVisible(true);
            jPIngreso.setVisible(false);
-           jPMenu1.setVisible(false);
-           jPMenu2.setVisible(true);
            JOptionPane.showMessageDialog(null, "Bienvenido");
        }else{
-          JOptionPane.showMessageDialog(null, "Datos incorrectos"); 
+          cont++;
+          JOptionPane.showMessageDialog(null, "Credenciales incorrectas"); 
+          if (cont==3){
+              JOptionPane.showMessageDialog(null, "Cuenta bloqueada");
+              cont=0;
+          }
        }
        
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -647,56 +309,6 @@ public class Principal extends javax.swing.JFrame {
     private void jtxtPassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtxtPassMouseClicked
         jtxtPass.setText("");
     }//GEN-LAST:event_jtxtPassMouseClicked
-
-    private void btUsD1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btUsD1ActionPerformed
-        Controlador ct= new Controlador();
-        int id= Integer.parseInt(this.jtUsuario.getValueAt(this.jtUsuario.getSelectedRow(), 8).toString());
-        ct.eliminarUsuario(id);
-      
-    }//GEN-LAST:event_btUsD1ActionPerformed
-
-    private void btRlUPS1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btRlUPS1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btRlUPS1ActionPerformed
-
-    private void btUsGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btUsGActionPerformed
-
-        // paso 5 cargar desde el controlador el metodo para crear el objeto en cuestion
-        Controlador con = new Controlador();
-        con.crearUsuario(this.txUsCed.getText(), this.txUsNom.getText(),
-            this.txUsApe.getText(), this.txUsTel.getText(),
-            this.txUsCor.getText(), this.txUsDir.getText(),
-            this.txUsCon.getText(),
-            this.cbRol.getItemAt(this.cbRol.getSelectedIndex()));
-
-    
-
-    }//GEN-LAST:event_btUsGActionPerformed
-
-    private void cbRolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbRolActionPerformed
-
-    }//GEN-LAST:event_cbRolActionPerformed
-
-    private void btUsU1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btUsU1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btUsU1ActionPerformed
-
-    private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed
-         jPIngreso.setVisible(false);
-           jPMenu1.setVisible(false);
-           jPAgendar.setVisible(false);
-           jPMenu2.setVisible(true);
-        
-
-    }//GEN-LAST:event_jbSalirActionPerformed
-
-    private void jbSalir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalir1ActionPerformed
-         jPIngreso.setVisible(true);
-           jPMenu1.setVisible(true);
-           jPMenu2.setVisible(false);
-           jtxtPass.setText("");
-           jtxtUser.setText("");
-    }//GEN-LAST:event_jbSalir1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -734,68 +346,25 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btRlUPN1;
-    private javax.swing.JButton btRlUPS1;
-    private javax.swing.JButton btUsD;
-    private javax.swing.JButton btUsD1;
-    private javax.swing.JButton btUsG;
-    private javax.swing.JButton btUsU;
-    private javax.swing.JButton btUsU1;
-    private javax.swing.JComboBox<Rol> cbRol;
-    private javax.swing.JButton jBagendar;
     public static javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPAgendar;
+    private javax.swing.JPanel jPBienvenda;
     private javax.swing.JPanel jPIngreso;
-    private javax.swing.JPanel jPMenu1;
-    private javax.swing.JPanel jPMenu2;
     private javax.swing.JPanel jPSalir;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JButton jbSalir;
-    private javax.swing.JButton jbSalir1;
     private javax.swing.JLabel jlCalculadora;
     private javax.swing.JLabel jlInternet;
     private javax.swing.JLabel jlMenu;
     private javax.swing.JLabel jlMinimizar;
     private javax.swing.JLabel jlMusica;
     private javax.swing.JLabel jlSalir;
-    private javax.swing.JTable jtUsuario;
-    private javax.swing.JTable jtUsuario1;
     public static javax.swing.JPasswordField jtxtPass;
     public static javax.swing.JTextField jtxtUser;
-    private javax.swing.JTextField txUsApe;
-    private javax.swing.JTextField txUsCed;
-    private javax.swing.JTextField txUsCon;
-    private javax.swing.JTextField txUsCor;
-    private javax.swing.JTextField txUsDir;
-    private javax.swing.JTextField txUsId;
-    private javax.swing.JTextField txUsNom;
-    private javax.swing.JTextField txUsS;
-    private javax.swing.JTextField txUsTel;
     // End of variables declaration//GEN-END:variables
 }
