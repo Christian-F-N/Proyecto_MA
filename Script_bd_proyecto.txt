@@ -1,0 +1,63 @@
+create database proyecto_activos;
+use database proyecto_activos;
+
+create table cuentas_usuario(
+	id_cue varchar(5) not null primary key,
+	nom_cue varchar(15) not null,
+	cla_cue varchar(10) not null,
+	fec_cre_cue date not null,
+	ced_usu varchar(10) not null,
+	nom_usu varchar(15) not null,
+	ape_usu varchar(15) not null,
+	fec_nac_usu date not null
+);
+
+create table activos(
+	id_act varchar(5) not null primary key,
+	nom_act varchar(20) not null,
+	est_act varchar(2) not null,
+	cod_bar_act varchar(25) not null,
+	des_act varchar(25) not null,
+	id_cue_per varchar(5),
+	foreign key (id_cue_per) references cuentas_usuario(id_cue)
+);
+
+create table proceso_validacion(
+	id_pro varchar(5) not null primary key,
+	nom_pro varchar(20) not null,
+	fec_hor_pro date not null,
+	id_res_pro varchar(5),
+	foreign key (id_res_pro) references cuentas_usuario(id_cue)
+);
+
+create table validacion_detalle(
+	id_det varchar(5) not null,
+	can_act int,
+	est_val varchar(2),
+	id_cue_val varchar(5) ,
+	id_pro_per varchar(5) ,
+	foreign key (id_cue_val) references cuentas_usuario(id_cue),
+	foreign key (id_pro_per) references proceso_validacion(id_pro)
+);
+
+insert into cuentas_usuario values('CUE01', 'Erickype', '1', '2021-07-17', '1801', 'Erick', 'Carrasco', '2000-09-07');
+insert into cuentas_usuario values('CUE02', 'Josuéype', '2', '2021-07-17', '1802', 'Josué', 'Santos', '2000-07-05');
+insert into cuentas_usuario values('CUE03', 'Christian', '3', '2021-07-17', '1803', 'Christian', 'Nuñez', '1980-08-09');
+insert into cuentas_usuario values('CUE04', 'Ameliaype', '4', '2021-07-17', '1804', 'Amelia', 'Sanchez', '1995-12-08');
+insert into cuentas_usuario values('CUE05', 'Carmen123', '5', '2021-07-17', '1805', 'Carmen', 'Vargas', '1996-02-28');
+
+insert into activos values('ACT01', 'Refrigerador', 'OK', '1', 'Buen estado', 'CUE01');
+insert into activos values('ACT02', 'Lámpara', 'R', '2', 'Buen estado', 'CUE01');
+insert into activos values('ACT03', 'Silla', 'OK', '3', 'Buen estado', 'CUE01');
+insert into activos values('ACT04', 'Computador hp', 'OK', '4', 'Buen estado', 'CUE02');
+insert into activos values('ACT05', 'Tocadiscos', 'R', '5', 'Buen estado', 'CUE02');
+insert into activos values('ACT06', 'Teléfono', 'OK', '6', 'Buen estado', 'CUE02');
+insert into activos values('ACT07', 'Monitor Dell', 'OK', '7', 'Buen estado', 'CUE03');
+insert into activos values('ACT08', 'Laptop hp', 'R', '8', 'Buen estado', 'CUE03');
+insert into activos values('ACT09', 'Escritorio', 'OK', '9', 'Buen estado', 'CUE03');
+insert into activos values('ACT10', 'Computador hp', 'OK', '10', 'Buen estado', 'CUE04');
+insert into activos values('ACT11', 'Telefono', 'R', '11', 'Buen estado', 'CUE04');
+insert into activos values('ACT12', 'Nevera', 'OK', '12', 'Buen estado', 'CUE04');
+insert into activos values('ACT13', 'Celular', 'OK', '13', 'Buen estado', 'CUE05');
+insert into activos values('ACT14', 'Portafolio', 'OK', '14', 'Buen estado', 'CUE05');
+insert into activos values('ACT15', 'Cámara', 'R', '15', 'Buen estado', 'CUE05');
