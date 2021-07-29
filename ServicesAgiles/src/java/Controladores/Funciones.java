@@ -353,9 +353,9 @@ public class Funciones implements Controlador {
                             cont++;
                             if (cont == 3) {
                                 int a = cont;
-//                                if (a == 3) {
-//                                    bloquearCuenta(user);
-//                                }
+                                if (a == 3) {
+                                    bloquearCuenta(user);
+                                }
                                 cont = 0;
                                 return "Cuenta bloqueada.\n Intento " + a + "/3.";
                             } else {
@@ -368,9 +368,9 @@ public class Funciones implements Controlador {
                     if (cont == 3) {
                         int a = cont;
                         cont = 0;
-//                        if (a == 3) {
-//                            bloquearCuenta(user);
-//                        }
+                        if (a == 3) {
+                            bloquearCuenta(user);
+                        }
                         return "Cuenta bloqueada.\n Intento " + a + "/3.";
                     } else {
                         if (cont == 0) {
@@ -385,9 +385,9 @@ public class Funciones implements Controlador {
                 if (cont == 3) {
                     int a = cont;
                     cont = 0;
-//                    if (a == 3) {
-//                        bloquearCuenta(user);
-//                    }
+                    if (a == 3) {
+                        bloquearCuenta(user);
+                    }
                     return "Cuenta bloqueada.\n Intento " + a + "/3.";
                 } else {
                     if (cont == 0) {
@@ -411,7 +411,7 @@ public class Funciones implements Controlador {
     @Override
     public Boolean estadoCuenta(String ced_esu) {
         Usuario usu = buscarUsuario(ced_esu);
-        if (usu.getEst_cue() == "A") {
+        if (usu.getEst_cue().equals("A")) {
             return true;
         } else {
             return false;
@@ -439,10 +439,10 @@ public class Funciones implements Controlador {
 
             while (i < tamaño) {
                 modelo.addRow(new Object[]{funact.get(i),
-                    funact.get(i), 
+                    funact.get(i),
                     funact.get(i),
                     funact.get(i)});
-                 
+
                 i++;
             }
             TableColumnModel modeloColumna = table.getColumnModel();
@@ -460,31 +460,89 @@ public class Funciones implements Controlador {
         }
     }
 
-//    @Override
-//    public List<FunActivos> verfunyactivos() {
-//        ArrayList<FunActivos> funact = new ArrayList();
-//        String consulta = "SELECT u.ced_usu ,u.nom_usu, u.ape_usu, count(a.id_act) FROM cuentas_usuario u, activos a WHERE u.ced_usu = a.ced_usu_per GROUP BY(a.ced_usu_per)";
-//        FunActivos val = null;
-//        
-//        try {
-//            st = cn.createStatement();
-//            datos = st.executeQuery(consulta);
-//            while (datos.next()) {
-//                val = new FunActivos();
-//          
-//                val.setNOM_USU(datos.getString(2));
-//                val.setAPE_USU(datos.getString(3));
-//                val.setCAN_ACT(datos.getInt(4));
-//                val.setID_USU(datos.getString(1));
-//                funact.add(val);
-//                
-//
-//            }
-//        } catch (SQLException ex) {
-//            Logger.getLogger(ConeccionMYSQL.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//        return funact;
-//    }
-}
+    @Override
+    public List<FunActivos> verfunyactivos() {
+        ArrayList<FunActivos> funact = new ArrayList();
+        String consulta = "SELECT u.ced_usu ,u.nom_usu, u.ape_usu, count(a.id_act) FROM cuentas_usuario u, activos a WHERE u.ced_usu = a.ced_usu_per GROUP BY(a.ced_usu_per)";
+        FunActivos val = null;
+        int a = 1;
+        try {
+            st = cn.createStatement();
+            datos = st.executeQuery(consulta);
+            while (datos.next()) {
+                val = new FunActivos();
+                val.setID(a);
+                val.setNOM_USU(datos.getString(2));
+                val.setAPE_USU(datos.getString(3));
+                val.setCAN_ACT(datos.getInt(4));
+                val.setID_USU(datos.getString(1));
+                funact.add(val);
+                a++;
+            }
+        } catch (SQLException ex) {
 
-               
+            Logger.getLogger(ConeccionMYSQL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return funact;
+    }
+
+    @Override
+    public List<ProValidacion> procesovalidad(String usu) {
+          ArrayList<ProValidacion> funact = new ArrayList();
+        String consulta = "SELECT u.ced_usu ,u.nom_usu, u.ape_usu, a.nom_act, a.est_act FROM cuentas_usuario u, activos a WHERE u.ced_usu ='"+usu+"' and a.ced_usu_per ='"+usu+"'and a.est_act='R'";
+        ProValidacion val = null;
+        int a = 1;
+        try {
+            st = cn.createStatement();
+            datos = st.executeQuery(consulta);
+            while (datos.next()) {
+                val = new ProValidacion();
+                val.setId_pro(a);
+                val.setId_usu(datos.getString(1));
+                val.setNom_usu(datos.getString(2));
+                val.setApe_usu(datos.getString(3));
+                val.setNom_act(datos.getString(4));
+                val.setEst_act(datos.getString(5));
+                funact.add(val);
+                a++;
+            }
+        } catch (SQLException ex) {
+
+            Logger.getLogger(ConeccionMYSQL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return funact;
+    }
+
+    @Override
+    public List<ProValidacion> todoslosactivos(String usu) {
+       ArrayList<ProValidacion> funact = new ArrayList();
+        String consulta = "SELECT u.ced_usu ,u.nom_usu, u.ape_usu, a.nom_act, a.est_act FROM cuentas_usuario u, activos a WHERE u.ced_usu ='"+usu+"' and a.ced_usu_per ='"+usu+"'";
+        ProValidacion val = null;
+        int a = 1;
+        try {
+            st = cn.createStatement();
+            datos = st.executeQuery(consulta);
+            while (datos.next()) {
+                val = new ProValidacion();
+                val.setId_pro(a);
+                val.setId_usu(datos.getString(2));
+                val.setNom_usu(datos.getString(3));
+                val.setApe_usu(datos.getString(4));
+                val.setNom_act(datos.getString(4));
+                val.setEst_act(datos.getString(4));
+                funact.add(val);
+                a++;
+            }
+        } catch (SQLException ex) {
+
+            Logger.getLogger(ConeccionMYSQL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return funact;
+    
+    }
+
+    @Override
+    public Boolean guardarProceso(List<ProValidacion> pro) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+}

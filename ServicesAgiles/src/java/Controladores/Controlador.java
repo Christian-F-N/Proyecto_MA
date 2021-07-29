@@ -46,5 +46,10 @@ public interface Controlador {
     
     public void jtFuncuionyactivos(JTable table);
     
-//    public List<FunActivos> verfunyactivos();
+    public List<FunActivos> verfunyactivos();
+    
+    public List<ProValidacion> procesovalidad(String usu);
+    public List<ProValidacion> todoslosactivos(String usu);
+    public Boolean guardarProceso(List<ProValidacion> pro );
+    
 }
