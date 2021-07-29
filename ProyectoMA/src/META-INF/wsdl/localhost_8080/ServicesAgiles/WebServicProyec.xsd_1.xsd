@@ -1,0 +1,278 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://WsProyecActivos/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://WsProyecActivos/">
+
+<xs:element name="bloquear" type="tns:bloquear" />
+
+<xs:element name="bloquearResponse" type="tns:bloquearResponse" />
+
+<xs:element name="cero" type="tns:cero" />
+
+<xs:element name="ceroResponse" type="tns:ceroResponse" />
+
+<xs:element name="desbloquear" type="tns:desbloquear" />
+
+<xs:element name="desbloquearResponse" type="tns:desbloquearResponse" />
+
+<xs:element name="detallValidaCondic" type="tns:detallValidaCondic" />
+
+<xs:element name="detallValidaCondicResponse" type="tns:detallValidaCondicResponse" />
+
+<xs:element name="estadoCuenta" type="tns:estadoCuenta" />
+
+<xs:element name="estadoCuentaResponse" type="tns:estadoCuentaResponse" />
+
+<xs:element name="listValidacion" type="tns:listValidacion" />
+
+<xs:element name="listValidacionResponse" type="tns:listValidacionResponse" />
+
+<xs:element name="listaUsiarios" type="tns:listaUsiarios" />
+
+<xs:element name="listaUsiariosResponse" type="tns:listaUsiariosResponse" />
+
+<xs:element name="listarActivos" type="tns:listarActivos" />
+
+<xs:element name="listarActivosResponse" type="tns:listarActivosResponse" />
+
+<xs:element name="listarActivosUsuario" type="tns:listarActivosUsuario" />
+
+<xs:element name="listarActivosUsuarioResponse" type="tns:listarActivosUsuarioResponse" />
+
+<xs:element name="listarDetalValidacion" type="tns:listarDetalValidacion" />
+
+<xs:element name="listarDetalValidacionResponse" type="tns:listarDetalValidacionResponse" />
+
+<xs:element name="listarPorPass" type="tns:listarPorPass" />
+
+<xs:element name="listarPorPassResponse" type="tns:listarPorPassResponse" />
+
+<xs:element name="listarPorUsuario" type="tns:listarPorUsuario" />
+
+<xs:element name="listarPorUsuarioResponse" type="tns:listarPorUsuarioResponse" />
+
+<xs:element name="login" type="tns:login" />
+
+<xs:element name="loginResponse" type="tns:loginResponse" />
+
+<xs:element name="validCondicion" type="tns:validCondicion" />
+
+<xs:element name="validCondicionResponse" type="tns:validCondicionResponse" />
+
+<xs:element name="validar" type="tns:validar" />
+
+<xs:element name="validarResponse" type="tns:validarResponse" />
+
+<xs:complexType name="detallValidaCondic">
+<xs:sequence>
+<xs:element name="condicion" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="detallValidaCondicResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:detallValidacion" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="detallValidacion">
+<xs:sequence>
+<xs:element name="can_act" type="xs:int" />
+<xs:element name="ced_usu_val" type="xs:string" minOccurs="0" />
+<xs:element name="est_val" type="xs:string" minOccurs="0" />
+<xs:element name="id_det" type="xs:string" minOccurs="0" />
+<xs:element name="id_pro_per" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="bloquear">
+<xs:sequence>
+<xs:element name="ced" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="bloquearResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listarActivos">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="listarActivosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:activos" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="activos">
+<xs:sequence>
+<xs:element name="ced_usu_per" type="xs:string" minOccurs="0" />
+<xs:element name="cod_bar_act" type="xs:string" minOccurs="0" />
+<xs:element name="des_act" type="xs:string" minOccurs="0" />
+<xs:element name="est_act" type="xs:string" minOccurs="0" />
+<xs:element name="id_act" type="xs:string" minOccurs="0" />
+<xs:element name="nom_act" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listValidacion">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="listValidacionResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:procValidacion" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="procValidacion">
+<xs:sequence>
+<xs:element name="est_pro" type="xs:string" minOccurs="0" />
+<xs:element name="fec_hor_pro" type="xs:string" minOccurs="0" />
+<xs:element name="id_pro" type="xs:string" minOccurs="0" />
+<xs:element name="id_res_pro" type="xs:string" minOccurs="0" />
+<xs:element name="nom_pro" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validar">
+<xs:sequence>
+<xs:element name="nomb" type="xs:string" minOccurs="0" />
+<xs:element name="pass" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validarResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:usuario" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="usuario">
+<xs:sequence>
+<xs:element name="ape_usu" type="xs:string" minOccurs="0" />
+<xs:element name="ced_usu" type="xs:string" minOccurs="0" />
+<xs:element name="cla_cue" type="xs:string" minOccurs="0" />
+<xs:element name="est_cue" type="xs:string" minOccurs="0" />
+<xs:element name="fec_cre_cue" type="xs:string" minOccurs="0" />
+<xs:element name="fec_nac_usu" type="xs:string" minOccurs="0" />
+<xs:element name="nom_cue" type="xs:string" minOccurs="0" />
+<xs:element name="nom_usu" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="desbloquear">
+<xs:sequence>
+<xs:element name="ced" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="desbloquearResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listaUsiarios">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="listaUsiariosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:usuario" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listarPorUsuario">
+<xs:sequence>
+<xs:element name="ced_usu" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listarPorUsuarioResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:usuario" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="estadoCuenta">
+<xs:sequence>
+<xs:element name="ced_usu" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="estadoCuentaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="login">
+<xs:sequence>
+<xs:element name="user" type="xs:string" minOccurs="0" />
+<xs:element name="password" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="loginResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validCondicion">
+<xs:sequence>
+<xs:element name="condicion" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validCondicionResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:procValidacion" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cero">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="ceroResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listarPorPass">
+<xs:sequence>
+<xs:element name="pass_usu" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listarPorPassResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:usuario" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listarDetalValidacion">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="listarDetalValidacionResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:detallValidacion" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listarActivosUsuario">
+<xs:sequence>
+<xs:element name="ced_usu" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listarActivosUsuarioResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:activos" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

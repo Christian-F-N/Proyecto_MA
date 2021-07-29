@@ -5,12 +5,7 @@
  */
 package Interfaz;
 
-
-
-
-import Controladores.Controller;
-import java.awt.Desktop;
-import java.net.URI;
+import Controlador.Controller;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,34 +13,11 @@ import javax.swing.JOptionPane;
  * @author HP
  */
 public class Principal extends javax.swing.JFrame {
-int cont=0;
-    /**
-     * Creates new form Principal
-     */
+
     public Principal() {
         initComponents();
-        
-        jPBienvenda.setVisible(false);
-        this.setLocationRelativeTo(null);
+       this.setLocationRelativeTo(null);
     }
-
-    public void internet() {
-        try {
-            Desktop.getDesktop().browse(URI.create("www.google.com"));
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, e);
-        }
-    }
-
-    public void youtube() {
-        try {
-            Desktop.getDesktop().browse(URI.create("https://youtu.be/j4D1zHPBBQY"));
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, e);
-            
-        }
-    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -55,31 +27,89 @@ int cont=0;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPBienvenda = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jPIngreso = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jtxtUser = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
-        jlMenu = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jBIngresar = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jtxtUser = new javax.swing.JTextField();
         jtxtPass = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
-        jlMusica = new javax.swing.JLabel();
-        jlCalculadora = new javax.swing.JLabel();
-        jlInternet = new javax.swing.JLabel();
+        prueba = new javax.swing.JTextField();
+        jPBienvenda = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
         jPSalir = new javax.swing.JPanel();
         jlSalir = new javax.swing.JLabel();
         jlMinimizar = new javax.swing.JLabel();
+        texto = new javax.swing.JLabel();
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_User_96px_2.png"))); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPIngreso.setBackground(new java.awt.Color(255, 255, 255));
+        jPIngreso.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        jPIngreso.setForeground(new java.awt.Color(255, 255, 255));
+        jPIngreso.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setBackground(new java.awt.Color(238, 111, 82));
+        jLabel1.setFont(new java.awt.Font("Candara", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(238, 111, 82));
+        jLabel1.setText("CONTRASEÑA:");
+        jPIngreso.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
+
+        jLabel2.setBackground(new java.awt.Color(238, 111, 82));
+        jLabel2.setFont(new java.awt.Font("Candara", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(238, 111, 82));
+        jLabel2.setText("USUARIO:");
+        jPIngreso.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
+
+        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+        jPIngreso.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 210, 30));
+
+        jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
+        jPIngreso.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 210, 30));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_customer_32px_1.png"))); // NOI18N
+        jPIngreso.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Key_32px.png"))); // NOI18N
+        jPIngreso.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, -1));
+
+        jBIngresar.setBackground(new java.awt.Color(255, 255, 255));
+        jBIngresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Enter_ON.png"))); // NOI18N
+        jBIngresar.setBorder(null);
+        jBIngresar.setBorderPainted(false);
+        jBIngresar.setContentAreaFilled(false);
+        jBIngresar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Enter_ON.png"))); // NOI18N
+        jBIngresar.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Enter_ON.png"))); // NOI18N
+        jBIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBIngresarActionPerformed(evt);
+            }
+        });
+        jPIngreso.add(jBIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 430, 150, 50));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_User_96px_2.png"))); // NOI18N
+        jPIngreso.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 100, 140));
+
+        jtxtUser.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jtxtUser.setForeground(new java.awt.Color(153, 153, 153));
+        jtxtUser.setBorder(null);
+        jPIngreso.add(jtxtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 170, 50));
+        jPIngreso.add(jtxtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, 150, -1));
+
+        prueba.setName(""); // NOI18N
+        jPIngreso.add(prueba, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 90, -1));
+
+        getContentPane().add(jPIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 290, 550));
 
         jPBienvenda.setBackground(new java.awt.Color(51, 51, 51));
         jPBienvenda.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -91,125 +121,6 @@ int cont=0;
         jPBienvenda.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 290, 230));
 
         getContentPane().add(jPBienvenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 290, 540));
-
-        jPIngreso.setBackground(new java.awt.Color(255, 255, 255));
-        jPIngreso.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-        jPIngreso.setForeground(new java.awt.Color(255, 255, 255));
-        jPIngreso.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setBackground(new java.awt.Color(238, 111, 82));
-        jLabel1.setFont(new java.awt.Font("Candara", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(238, 111, 82));
-        jLabel1.setText("CONTRASEÑA:");
-        jPIngreso.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, -1, -1));
-
-        jLabel2.setBackground(new java.awt.Color(238, 111, 82));
-        jLabel2.setFont(new java.awt.Font("Candara", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(238, 111, 82));
-        jLabel2.setText("USUARIO:");
-        jPIngreso.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_User_96px_2.png"))); // NOI18N
-        jPIngreso.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 100, 110));
-
-        jtxtUser.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jtxtUser.setForeground(new java.awt.Color(153, 153, 153));
-        jtxtUser.setText("Ingrese su usuario.");
-        jtxtUser.setBorder(null);
-        jtxtUser.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jtxtUserMouseClicked(evt);
-            }
-        });
-        jtxtUser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtxtUserActionPerformed(evt);
-            }
-        });
-        jPIngreso.add(jtxtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 170, 30));
-
-        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
-        jPIngreso.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 210, 30));
-
-        jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
-        jPIngreso.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 210, 30));
-
-        jlMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Menu_32px.png"))); // NOI18N
-        jlMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jlMenu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jlMenuMouseClicked(evt);
-            }
-        });
-        jPIngreso.add(jlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_customer_32px_1.png"))); // NOI18N
-        jPIngreso.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Key_32px.png"))); // NOI18N
-        jPIngreso.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, -1, -1));
-
-        jtxtPass.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jtxtPass.setForeground(new java.awt.Color(153, 153, 153));
-        jtxtPass.setText("jPassword53,1d2");
-        jtxtPass.setBorder(null);
-        jtxtPass.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jtxtPassMouseClicked(evt);
-            }
-        });
-        jtxtPass.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtxtPassActionPerformed(evt);
-            }
-        });
-        jPIngreso.add(jtxtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, 160, 30));
-
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Enter_ON.png"))); // NOI18N
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Enter_ON.png"))); // NOI18N
-        jButton1.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Enter_ON.png"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPIngreso.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 461, 150, 50));
-
-        jlMusica.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlMusica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Musical_Notes_32px.png"))); // NOI18N
-        jlMusica.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jlMusica.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jlMusicaMouseClicked(evt);
-            }
-        });
-        jPIngreso.add(jlMusica, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 160, 40, 40));
-
-        jlCalculadora.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlCalculadora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Calculator_32px.png"))); // NOI18N
-        jlCalculadora.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jlCalculadora.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jlCalculadoraMouseClicked(evt);
-            }
-        });
-        jPIngreso.add(jlCalculadora, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 110, 40, 40));
-
-        jlInternet.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlInternet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_Globe_32px.png"))); // NOI18N
-        jlInternet.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jlInternet.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jlInternetMouseClicked(evt);
-            }
-        });
-        jPIngreso.add(jlInternet, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 60, 40, 40));
-
-        getContentPane().add(jPIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 290, 550));
 
         jPSalir.setBackground(new java.awt.Color(255, 255, 255));
         jPSalir.setForeground(new java.awt.Color(255, 255, 255));
@@ -237,26 +148,19 @@ int cont=0;
 
         getContentPane().add(jPSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, -1));
 
+        texto.setText("ingresar");
+        getContentPane().add(texto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jtxtUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtUserActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtxtUserActionPerformed
-
-    private void jtxtPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtPassActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtxtPassActionPerformed
-
-    private void jlMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlMenuMouseClicked
-    
-    }//GEN-LAST:event_jlMenuMouseClicked
 
     private void jlMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlMinimizarMouseClicked
         this.setState(Principal.ICONIFIED);
     }//GEN-LAST:event_jlMinimizarMouseClicked
 
     private void jlSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlSalirMouseClicked
+       Controller ctrl = new Controller();
+       ctrl.reinicio();
         int dialog = JOptionPane.YES_NO_OPTION;
         int result = JOptionPane.showConfirmDialog(null, "¿Desea salir?", "SALIR", dialog);
         if (result == 0) {
@@ -264,51 +168,13 @@ int cont=0;
         }
     }//GEN-LAST:event_jlSalirMouseClicked
 
-    private void jlInternetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlInternetMouseClicked
-        internet();
-    }//GEN-LAST:event_jlInternetMouseClicked
-
-    private void jlCalculadoraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlCalculadoraMouseClicked
-        try {
-            Runtime rt = Runtime.getRuntime();
-            Process p = rt.exec("calc");
-            p.waitFor();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-        }
-    }//GEN-LAST:event_jlCalculadoraMouseClicked
-
-    private void jlMusicaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlMusicaMouseClicked
-        youtube();
-    }//GEN-LAST:event_jlMusicaMouseClicked
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jBIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBIngresarActionPerformed
        
-        Controller control=new Controller();
-       Boolean resp= control.login();
-        System.out.println(resp);
-       if (resp==true){
-           jPBienvenda.setVisible(true);
-           jPIngreso.setVisible(false);
-           JOptionPane.showMessageDialog(null, "Bienvenido");
-       }else{
-          cont++;
-          JOptionPane.showMessageDialog(null, "Credenciales incorrectas"); 
-          if (cont==3){
-              JOptionPane.showMessageDialog(null, "Cuenta bloqueada");
-              cont=0;
-          }
-       }
-       
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jtxtUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtxtUserMouseClicked
-        jtxtUser.setText("");
-    }//GEN-LAST:event_jtxtUserMouseClicked
-
-    private void jtxtPassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtxtPassMouseClicked
-        jtxtPass.setText("");
-    }//GEN-LAST:event_jtxtPassMouseClicked
+        Controller ctrl = new Controller();
+        String resp = ctrl.log(jtxtUser.getText(),jtxtPass.getText());
+        JOptionPane.showMessageDialog(null, resp);
+        
+    }//GEN-LAST:event_jBIngresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -326,15 +192,11 @@ int cont=0;
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        
         //</editor-fold>
 
         /* Create and display the form */
@@ -346,25 +208,24 @@ int cont=0;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public static javax.swing.JButton jButton1;
+    public static javax.swing.JButton jBIngresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPBienvenda;
-    private javax.swing.JPanel jPIngreso;
+    public static javax.swing.JPanel jPIngreso;
     private javax.swing.JPanel jPSalir;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JLabel jlCalculadora;
-    private javax.swing.JLabel jlInternet;
-    private javax.swing.JLabel jlMenu;
     private javax.swing.JLabel jlMinimizar;
-    private javax.swing.JLabel jlMusica;
     private javax.swing.JLabel jlSalir;
-    public static javax.swing.JPasswordField jtxtPass;
-    public static javax.swing.JTextField jtxtUser;
+    public javax.swing.JPasswordField jtxtPass;
+    public javax.swing.JTextField jtxtUser;
+    public javax.swing.JTextField prueba;
+    public static javax.swing.JLabel texto;
     // End of variables declaration//GEN-END:variables
 }
