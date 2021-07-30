@@ -488,8 +488,8 @@ public class Funciones implements Controlador {
 
     @Override
     public List<ProValidacion> procesovalidad(String usu) {
-          ArrayList<ProValidacion> funact = new ArrayList();
-        String consulta = "SELECT u.ced_usu ,u.nom_usu, u.ape_usu, a.nom_act, a.est_act FROM cuentas_usuario u, activos a WHERE u.ced_usu ='"+usu+"' and a.ced_usu_per ='"+usu+"'and a.est_act='R'";
+        ArrayList<ProValidacion> funact = new ArrayList();
+        String consulta = "SELECT u.ced_usu ,u.nom_usu, u.ape_usu, a.nom_act, a.est_act FROM cuentas_usuario u, activos a WHERE u.ced_usu ='" + usu + "' and a.ced_usu_per ='" + usu + "'and a.est_act='R'";
         ProValidacion val = null;
         int a = 1;
         try {
@@ -515,8 +515,8 @@ public class Funciones implements Controlador {
 
     @Override
     public List<ProValidacion> todoslosactivos(String usu) {
-       ArrayList<ProValidacion> funact = new ArrayList();
-        String consulta = "SELECT u.ced_usu ,u.nom_usu, u.ape_usu, a.nom_act, a.est_act FROM cuentas_usuario u, activos a WHERE u.ced_usu ='"+usu+"' and a.ced_usu_per ='"+usu+"'";
+        ArrayList<ProValidacion> funact = new ArrayList();
+        String consulta = "SELECT u.ced_usu ,u.nom_usu, u.ape_usu, a.nom_act, a.est_act FROM cuentas_usuario u, activos a WHERE u.ced_usu ='" + usu + "' and a.ced_usu_per ='" + usu + "'";
         ProValidacion val = null;
         int a = 1;
         try {
@@ -538,11 +538,78 @@ public class Funciones implements Controlador {
             Logger.getLogger(ConeccionMYSQL.class.getName()).log(Level.SEVERE, null, ex);
         }
         return funact;
-    
+
     }
 
     @Override
-    public Boolean guardarProceso(List<ProValidacion> pro) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Boolean guardarProceso(Validar act) {
+      PreparedStatement pst;
+        String sentencia="Insert into Cooperativa values (null, ?,?,?,?)";
+
+        try {
+            pst = cn.prepareStatement(sentencia);
+            
+            pst.setString(1, act.getId_usu());
+            pst.setString(2, act.getId_act_per());
+            pst.setString(3, act.getEst_activo());
+            pst.setString(4, act.getFecha());
+            int res = pst.executeUpdate();
+            if (res > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ConeccionMYSQL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
     }
+
+    @Override
+    public List<Validar> mostraracttivosValidar(String usu) {
+       
+        ArrayList<Validar> funact = new ArrayList();
+        String consulta = "SELECT u.ced_usu,a.id_act,a.est_act from cuentas_usuario u,activos a where u.ced_usu=a.ced_usu_per and a.est_act='R' and u.ced_usu='"+usu+"'";
+        Validar val = null;
+        int a = 1;
+        try {
+            st = cn.createStatement();
+            datos = st.executeQuery(consulta);
+            while (datos.next()) {
+                val = new Validar();
+                val.setId(a);
+                val.setId_usu(datos.getString(1));
+                val.setId_act_per(datos.getString(2));
+                val.setEst_activo(datos.getString(3));
+                val.setFecha(datos.getString(4));
+
+                funact.add(val);
+                a++;
+            }
+        } catch (SQLException ex) {
+
+            Logger.getLogger(ConeccionMYSQL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return funact;
+    }
+
+    @Override
+    public Boolean actualizarEstado(Validar val) {
+       PreparedStatement pst;
+        String sentencia="Update activos set est_act=? Where id_act=?";
+
+        try {
+            pst = cn.prepareStatement(sentencia);
+            pst.setString(1, val.getEst_activo());
+            pst.setString(2, val.getId_act_per());
+            int res = pst.executeUpdate();
+            if (res > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ConeccionMYSQL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;}
 }

@@ -6,14 +6,10 @@
 package Interfaz;
 
 import Controlador.Controller;
-import Web.ProValidacion;
-import java.util.ArrayList;
-import static java.util.Collections.list;
-import java.util.List;
 import javax.swing.DefaultListModel;
 
 import javax.swing.JOptionPane;
-import javax.swing.event.ListDataListener;
+
 
 /**
  *
@@ -22,7 +18,7 @@ import javax.swing.event.ListDataListener;
 public class Menu extends javax.swing.JFrame {
  String user="";
     DefaultListModel modeloLista = new DefaultListModel();
-    Validar v2 = new Validar();
+   
  
 //    Controller ctrl =new Controller();
 
@@ -34,7 +30,7 @@ public class Menu extends javax.swing.JFrame {
         initComponents();
         
 //      ctrl.cargarTablaFuncYAvtivos();
-        v2.setVisible(false);
+      
       
         jList1.setModel(modeloLista);
         this.setLocationRelativeTo(null);
@@ -57,7 +53,7 @@ public class Menu extends javax.swing.JFrame {
         jPSalir = new javax.swing.JPanel();
         jlMinimizar = new javax.swing.JLabel();
         jlSalir = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        jPIngresar = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTFunActi = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
@@ -67,6 +63,14 @@ public class Menu extends javax.swing.JFrame {
         jBAgregar = new javax.swing.JButton();
         jBQuitar = new javax.swing.JButton();
         jlEtiqueta = new javax.swing.JLabel();
+        jpValidar = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tabla = new javax.swing.JTable();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jBRegresar = new javax.swing.JButton();
+        jBGuardar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -99,8 +103,8 @@ public class Menu extends javax.swing.JFrame {
 
         getContentPane().add(jPSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 30));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPIngresar.setBackground(new java.awt.Color(255, 255, 255));
+        jPIngresar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTFunActi.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -123,12 +127,12 @@ public class Menu extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTFunActi);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 360, 170));
+        jPIngresar.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 360, 170));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Cooper Black", 0, 24)); // NOI18N
         jLabel1.setText("FUNCIONARIOS Y ACTIVOS");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, -1, -1));
+        jPIngresar.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, -1, -1));
 
         jBValidar.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
         jBValidar.setText("Validar");
@@ -137,11 +141,11 @@ public class Menu extends javax.swing.JFrame {
                 jBValidarActionPerformed(evt);
             }
         });
-        jPanel1.add(jBValidar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 450, -1, -1));
+        jPIngresar.add(jBValidar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 450, -1, -1));
 
         jScrollPane2.setViewportView(jList1);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 210, 90, 170));
+        jPIngresar.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 210, 90, 170));
 
         jBAgregar.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
         jBAgregar.setText(">>");
@@ -150,7 +154,7 @@ public class Menu extends javax.swing.JFrame {
                 jBAgregarActionPerformed(evt);
             }
         });
-        jPanel1.add(jBAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 50, -1));
+        jPIngresar.add(jBAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 50, -1));
 
         jBQuitar.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
         jBQuitar.setText("<<");
@@ -159,10 +163,92 @@ public class Menu extends javax.swing.JFrame {
                 jBQuitarActionPerformed(evt);
             }
         });
-        jPanel1.add(jBQuitar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, -1, -1));
-        jPanel1.add(jlEtiqueta, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 90, 30));
+        jPIngresar.add(jBQuitar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, -1, -1));
+        jPIngresar.add(jlEtiqueta, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 90, 30));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 560, 550));
+        getContentPane().add(jPIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 560, 550));
+
+        jpValidar.setBackground(new java.awt.Color(255, 255, 255));
+
+        tabla.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        tabla.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaMouseClicked(evt);
+            }
+        });
+        jScrollPane3.setViewportView(tabla);
+
+        jTextField1.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+
+        jLabel2.setFont(new java.awt.Font("Cooper Black", 0, 24)); // NOI18N
+        jLabel2.setText("PROCESO DE VALIDACION.");
+
+        jLabel3.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+        jLabel3.setText("Nombre del proceso : ");
+
+        jBRegresar.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+        jBRegresar.setText("Regresar");
+        jBRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBRegresarActionPerformed(evt);
+            }
+        });
+
+        jBGuardar.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+        jBGuardar.setText("Guardar");
+        jBGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBGuardarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jpValidarLayout = new javax.swing.GroupLayout(jpValidar);
+        jpValidar.setLayout(jpValidarLayout);
+        jpValidarLayout.setHorizontalGroup(
+            jpValidarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpValidarLayout.createSequentialGroup()
+                .addGap(110, 110, 110)
+                .addComponent(jLabel2))
+            .addGroup(jpValidarLayout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(jLabel3))
+            .addGroup(jpValidarLayout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jpValidarLayout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jpValidarLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jBRegresar)
+                .addGap(293, 293, 293)
+                .addComponent(jBGuardar))
+        );
+        jpValidarLayout.setVerticalGroup(
+            jpValidarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpValidarLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jLabel2)
+                .addGap(42, 42, 42)
+                .addComponent(jLabel3)
+                .addGap(3, 3, 3)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(67, 67, 67)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(141, 141, 141)
+                .addGroup(jpValidarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jBRegresar)
+                    .addComponent(jBGuardar)))
+        );
+
+        getContentPane().add(jpValidar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 31, 560, 550));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -187,7 +273,8 @@ public Object usuarios(){
     private void jBValidarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBValidarActionPerformed
         Controller ctrl = new Controller();
 //        ctrl.cargarTablaValidar();
-        v2.setVisible(true);
+      jpValidar.setVisible(true);
+//      jPIngresar.setVisible(false);
 //        ctrl.cargarValidador();
         
     
@@ -220,6 +307,28 @@ public Object usuarios(){
      int ind=jList1.getSelectedIndex();
      modeloLista.remove(ind);
     }//GEN-LAST:event_jBQuitarActionPerformed
+
+    private void tablaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaMouseClicked
+        //        int fila= tabla.getSelectedRow();
+        //            dato= tabla.getValueAt(fila, 0).toString();
+        //           etiqueta.setText(dato);
+        //          hola.addElement(dato);
+
+    }//GEN-LAST:event_tablaMouseClicked
+
+    private void jBRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBRegresarActionPerformed
+        Menu v3= new Menu();
+        Controller ctrl=new Controller();
+        ctrl.cargarTablaFuncYAvtivos();
+        Principal v1= new Principal();
+        v1.setVisible(false);
+        v3.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jBRegresarActionPerformed
+
+    private void jBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGuardarActionPerformed
+
+    }//GEN-LAST:event_jBGuardarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -259,18 +368,26 @@ public Object usuarios(){
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBAgregar;
+    private javax.swing.JButton jBGuardar;
     private javax.swing.JButton jBQuitar;
+    private javax.swing.JButton jBRegresar;
     private javax.swing.JButton jBValidar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JList<String> jList1;
+    private javax.swing.JPanel jPIngresar;
     private javax.swing.JPanel jPSalir;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     public static javax.swing.JTable jTFunActi;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel jlEtiqueta;
     private javax.swing.JLabel jlMinimizar;
     private javax.swing.JLabel jlSalir;
+    private javax.swing.JPanel jpValidar;
+    public static javax.swing.JTable tabla;
     // End of variables declaration//GEN-END:variables
 
     private static java.util.List<Web.FunActivos> verFunyActivos() {

@@ -5,10 +5,8 @@
  */
 package Controlador;
 
-import Interfaz.Menu;
-import Interfaz.NewJFrame;
-import Interfaz.Principal;
-import Interfaz.Validar;
+import Interfaz.Inicio;
+import Interfaz.Pvalidar;
 import Web.FunActivos;
 import Web.ProValidacion;
 import java.util.List;
@@ -22,16 +20,15 @@ import javax.swing.table.TableColumnModel;
  */
 public class Controller {
 
-    Menu v1 = new Menu();
-    Validar v2 = new Validar();
-    Principal v0 = new Principal();
+    Pvalidar menu = new Pvalidar();
+    Inicio inicio = new Inicio();
 
     public String log(String user, String pass) {
         boolean est = estadoCuenta(user);
         String resp = login(user, pass);
         if (est == true && resp.equals("Bienvenido")) {
-            v0.dispose();
-            v1.setVisible(true);
+            menu.setVisible(true);
+            inicio.dispose();
             cargarTablaFuncYAvtivos();
             return resp;
         } else {
@@ -47,13 +44,13 @@ public class Controller {
     }
 
     public void cargarTablaValidar() {
-        
+
         List<ProValidacion> funact;
         try {
             funact = activosparaproceso("1803");
             //Datos de Tabla
             DefaultTableModel modelo = new DefaultTableModel();
-           NewJFrame.tabla.setModel(modelo);
+            Pvalidar.tablajp.setModel(modelo);
             modelo.addColumn("Id");
             modelo.addColumn("Id Usu");
             modelo.addColumn("Nombre");
@@ -74,14 +71,13 @@ public class Controller {
 
                 i++;
             }
-            TableColumnModel modeloColumna =NewJFrame.tabla.getColumnModel();
+            TableColumnModel modeloColumna = Pvalidar.tablajp.getColumnModel();
             modeloColumna.getColumn(0).setPreferredWidth(315);
             modeloColumna.getColumn(1).setPreferredWidth(315);
             modeloColumna.getColumn(2).setPreferredWidth(315);
             modeloColumna.getColumn(3).setPreferredWidth(315);
             modeloColumna.getColumn(4).setPreferredWidth(315);
             modeloColumna.getColumn(5).setPreferredWidth(315);
-       
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(
@@ -93,16 +89,15 @@ public class Controller {
     }
 
     public void cargarTablaFuncYAvtivos() {
-        
-        
+
         List<FunActivos> funact;
         try {
 
             funact = verFunyActivos();
             //Datos de Tabla
             DefaultTableModel modelo = new DefaultTableModel();
-            Menu.jTFunActi.setModel(modelo);
-         //   Validar.jTvalidar.setModel(modelo);
+            Pvalidar.jTFunActijp.setModel(modelo);
+            //   Validar.jTvalidar.setModel(modelo);
             modelo.addColumn("Id");
             modelo.addColumn("Id Usu");
             modelo.addColumn("Nombre");
@@ -121,7 +116,7 @@ public class Controller {
 
                 i++;
             }
-            TableColumnModel modeloColumna = Menu.jTFunActi.getColumnModel();
+            TableColumnModel modeloColumna = Pvalidar.jTFunActijp.getColumnModel();
             modeloColumna.getColumn(0).setPreferredWidth(315);
             modeloColumna.getColumn(1).setPreferredWidth(315);
             modeloColumna.getColumn(2).setPreferredWidth(315);
@@ -136,50 +131,6 @@ public class Controller {
                     JOptionPane.ERROR_MESSAGE);
         }
     }
-    
-//    public void cargarValidador(){
-//        List<FunActivos> funact;
-//        try {
-//
-//            funact = verFunyActivos();
-//            //Datos de Tabla
-//            DefaultTableModel modelo = new DefaultTableModel();
-//      Validar.Validar.setModel(modelo);
-//            modelo.addColumn("Id");
-//            modelo.addColumn("Id Usu");
-//            modelo.addColumn("Nombre");
-//            modelo.addColumn("Apellido");
-//            modelo.addColumn("Total activos");
-//
-//            int tamaño = funact.size();
-//            int i = 0;
-//
-//            while (i < tamaño) {
-//                modelo.addRow(new Object[]{funact.get(i).getID(),
-//                    funact.get(i).getIDUSU(),
-//                    funact.get(i).getNOMUSU(),
-//                    funact.get(i).getAPEUSU(),
-//                    funact.get(i).getCANACT()});
-//
-//                i++;
-//            }
-//            TableColumnModel modeloColumna = Validar.Validar.getColumnModel();
-//            modeloColumna.getColumn(0).setPreferredWidth(315);
-//            modeloColumna.getColumn(1).setPreferredWidth(315);
-//            modeloColumna.getColumn(2).setPreferredWidth(315);
-//            modeloColumna.getColumn(3).setPreferredWidth(315);
-//            modeloColumna.getColumn(4).setPreferredWidth(315);
-//            System.out.println("salio");
-//
-//        } catch (Exception e) {
-//            JOptionPane.showMessageDialog(
-//                    null,
-//                    "Error: " + e.getMessage(),
-//                    "Excepcion al cargar cargarDatosTabla.Funcionarios y activos ",
-//                    JOptionPane.ERROR_MESSAGE);
-//        }
-//    }
-    
 
     public void reinicio() {
         cero();

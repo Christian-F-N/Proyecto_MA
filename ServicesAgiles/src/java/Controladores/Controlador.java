@@ -43,13 +43,19 @@ public interface Controlador {
     public void cero();
 
     public Boolean estadoCuenta(String ced_esu);
-    
+
     public void jtFuncuionyactivos(JTable table);
-    
+
     public List<FunActivos> verfunyactivos();
-    
+
     public List<ProValidacion> procesovalidad(String usu);
+
     public List<ProValidacion> todoslosactivos(String usu);
-    public Boolean guardarProceso(List<ProValidacion> pro );
-    
+
+    public Boolean guardarProceso(Validar act);
+
+    public List<Validar> mostraracttivosValidar(String act);
+
+    public Boolean actualizarEstado(Validar val);
+
 }

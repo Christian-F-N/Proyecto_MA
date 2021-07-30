@@ -12,6 +12,10 @@
 
 <xs:element name="activosnoValidadosResponse" type="tns:activosnoValidadosResponse" />
 
+<xs:element name="actualizaEstado" type="tns:actualizaEstado" />
+
+<xs:element name="actualizaEstadoResponse" type="tns:actualizaEstadoResponse" />
+
 <xs:element name="cero" type="tns:cero" />
 
 <xs:element name="desbloquear" type="tns:desbloquear" />
@@ -22,9 +26,17 @@
 
 <xs:element name="estadoCuentaResponse" type="tns:estadoCuentaResponse" />
 
+<xs:element name="guardarProceso" type="tns:guardarProceso" />
+
+<xs:element name="guardarProcesoResponse" type="tns:guardarProcesoResponse" />
+
 <xs:element name="login" type="tns:login" />
 
 <xs:element name="loginResponse" type="tns:loginResponse" />
+
+<xs:element name="mostrarActivosAValidar" type="tns:mostrarActivosAValidar" />
+
+<xs:element name="mostrarActivosAValidarResponse" type="tns:mostrarActivosAValidarResponse" />
 
 <xs:element name="verFunyActivos" type="tns:verFunyActivos" />
 
@@ -89,6 +101,28 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="guardarProceso">
+<xs:sequence>
+<xs:element name="dato" type="tns:validar" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validar">
+<xs:sequence>
+<xs:element name="est_activo" type="xs:string" minOccurs="0" />
+<xs:element name="fecha" type="xs:string" minOccurs="0" />
+<xs:element name="id" type="xs:int" />
+<xs:element name="id_act_per" type="xs:string" minOccurs="0" />
+<xs:element name="id_usu" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="guardarProcesoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="Bloquear">
 <xs:sequence>
 <xs:element name="user" type="xs:string" minOccurs="0" />
@@ -96,6 +130,18 @@
 </xs:complexType>
 
 <xs:complexType name="BloquearResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizaEstado">
+<xs:sequence>
+<xs:element name="procValidar" type="tns:validar" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizaEstadoResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean" minOccurs="0" />
 </xs:sequence>
@@ -110,6 +156,18 @@
 <xs:complexType name="estadoCuentaResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="mostrarActivosAValidar">
+<xs:sequence>
+<xs:element name="usu" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="mostrarActivosAValidarResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:validar" minOccurs="0" maxOccurs="unbounded" />
 </xs:sequence>
 </xs:complexType>
 

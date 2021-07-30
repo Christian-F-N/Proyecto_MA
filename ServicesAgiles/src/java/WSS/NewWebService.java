@@ -8,6 +8,7 @@ package WSS;
 import Controladores.FunActivos;
 import Controladores.Funciones;
 import Controladores.ProValidacion;
+import Controladores.Validar;
 import java.util.List;
 import javax.jws.Oneway;
 import javax.jws.WebService;
@@ -72,6 +73,26 @@ public class NewWebService {
     @WebMethod(operationName = "activosnoValidados")
     public List<ProValidacion> activosnoValidados(@WebParam(name = "usuario") String usuario) {
         List resp=fun.todoslosactivos(usuario);
+        return resp;
+    }
+
+ 
+    @WebMethod(operationName = "actualizaEstado")
+    public Boolean actualizaEstado(@WebParam(name = "procValidar") Validar procValidar) {
+        Boolean resp=fun.actualizarEstado(procValidar);
+        return resp;
+    }
+
+    @WebMethod(operationName = "mostrarActivosAValidar")
+    public List<Validar> mostrarActivosAValidar(@WebParam(name = "usu") String usu) {
+        List resp=fun.mostraracttivosValidar(usu);
+        return resp;
+    }
+
+  
+    @WebMethod(operationName = "guardarProceso")
+    public Boolean guardarProceso(@WebParam(name = "dato") Validar dato) {
+        Boolean resp=fun.guardarProceso(dato);
         return resp;
     }
 }
