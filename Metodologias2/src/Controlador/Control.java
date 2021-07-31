@@ -218,18 +218,10 @@ public class Control {
         return port.login(user, pass);
     }
 
-
-
     private static java.util.List<Controlador.FunActivos> verFunyActivos() {
         Controlador.NewWebService_Service service = new Controlador.NewWebService_Service();
         Controlador.NewWebService port = service.getNewWebServicePort();
         return port.verFunyActivos();
-    }
-
-    private static java.util.List<Controlador.ProValidacion> activosparaproceso_1(java.lang.String usuario) {
-        Controlador.NewWebService_Service service = new Controlador.NewWebService_Service();
-        Controlador.NewWebService port = service.getNewWebServicePort();
-        return port.activosparaproceso(usuario);
     }
 
     private static java.util.List<Controlador.ProValidacion> activosparaproceso(java.lang.String usuario) {
@@ -237,5 +229,16 @@ public class Control {
         Controlador.NewWebService port = service.getNewWebServicePort();
         return port.activosparaproceso(usuario);
     }
+
+
+
+ 
+
+
+   
+
+  
+
+ 
 
 }

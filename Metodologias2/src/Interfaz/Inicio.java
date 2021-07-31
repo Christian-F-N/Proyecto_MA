@@ -7,7 +7,6 @@ package Interfaz;
 
 import Controlador.Control;
 import javax.swing.DefaultListModel;
-import javax.swing.JList;
 import javax.swing.JOptionPane;
 
 /**

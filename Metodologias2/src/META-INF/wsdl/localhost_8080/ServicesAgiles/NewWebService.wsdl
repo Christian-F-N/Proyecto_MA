@@ -13,11 +13,11 @@
 <message name="cero">
 <part name="parameters" element="tns:cero" />
 </message>
-<message name="estadoCuenta">
-<part name="parameters" element="tns:estadoCuenta" />
+<message name="guardarProceso">
+<part name="parameters" element="tns:guardarProceso" />
 </message>
-<message name="estadoCuentaResponse">
-<part name="parameters" element="tns:estadoCuentaResponse" />
+<message name="guardarProcesoResponse">
+<part name="parameters" element="tns:guardarProcesoResponse" />
 </message>
 <message name="desbloquear">
 <part name="parameters" element="tns:desbloquear" />
@@ -25,23 +25,11 @@
 <message name="desbloquearResponse">
 <part name="parameters" element="tns:desbloquearResponse" />
 </message>
-<message name="mostrarActivosAValidar">
-<part name="parameters" element="tns:mostrarActivosAValidar" />
+<message name="estadoCuenta">
+<part name="parameters" element="tns:estadoCuenta" />
 </message>
-<message name="mostrarActivosAValidarResponse">
-<part name="parameters" element="tns:mostrarActivosAValidarResponse" />
-</message>
-<message name="guardarProceso">
-<part name="parameters" element="tns:guardarProceso" />
-</message>
-<message name="guardarProcesoResponse">
-<part name="parameters" element="tns:guardarProcesoResponse" />
-</message>
-<message name="verFunyActivos">
-<part name="parameters" element="tns:verFunyActivos" />
-</message>
-<message name="verFunyActivosResponse">
-<part name="parameters" element="tns:verFunyActivosResponse" />
+<message name="estadoCuentaResponse">
+<part name="parameters" element="tns:estadoCuentaResponse" />
 </message>
 <message name="Bloquear">
 <part name="parameters" element="tns:Bloquear" />
@@ -55,11 +43,23 @@
 <message name="actualizaEstadoResponse">
 <part name="parameters" element="tns:actualizaEstadoResponse" />
 </message>
+<message name="verFunyActivos">
+<part name="parameters" element="tns:verFunyActivos" />
+</message>
+<message name="verFunyActivosResponse">
+<part name="parameters" element="tns:verFunyActivosResponse" />
+</message>
 <message name="activosnoValidados">
 <part name="parameters" element="tns:activosnoValidados" />
 </message>
 <message name="activosnoValidadosResponse">
 <part name="parameters" element="tns:activosnoValidadosResponse" />
+</message>
+<message name="mostrarActivosAValidar">
+<part name="parameters" element="tns:mostrarActivosAValidar" />
+</message>
+<message name="mostrarActivosAValidarResponse">
+<part name="parameters" element="tns:mostrarActivosAValidarResponse" />
 </message>
 <message name="Activosparaproceso">
 <part name="parameters" element="tns:Activosparaproceso" />
@@ -75,25 +75,17 @@
 <operation name="cero">
 <input wsam:Action="http://WSS/NewWebService/cero" message="tns:cero" />
 </operation>
-<operation name="estadoCuenta">
-<input wsam:Action="http://WSS/NewWebService/estadoCuentaRequest" message="tns:estadoCuenta" />
-<output wsam:Action="http://WSS/NewWebService/estadoCuentaResponse" message="tns:estadoCuentaResponse" />
+<operation name="guardarProceso">
+<input wsam:Action="http://WSS/NewWebService/guardarProcesoRequest" message="tns:guardarProceso" />
+<output wsam:Action="http://WSS/NewWebService/guardarProcesoResponse" message="tns:guardarProcesoResponse" />
 </operation>
 <operation name="desbloquear">
 <input wsam:Action="http://WSS/NewWebService/desbloquearRequest" message="tns:desbloquear" />
 <output wsam:Action="http://WSS/NewWebService/desbloquearResponse" message="tns:desbloquearResponse" />
 </operation>
-<operation name="mostrarActivosAValidar">
-<input wsam:Action="http://WSS/NewWebService/mostrarActivosAValidarRequest" message="tns:mostrarActivosAValidar" />
-<output wsam:Action="http://WSS/NewWebService/mostrarActivosAValidarResponse" message="tns:mostrarActivosAValidarResponse" />
-</operation>
-<operation name="guardarProceso">
-<input wsam:Action="http://WSS/NewWebService/guardarProcesoRequest" message="tns:guardarProceso" />
-<output wsam:Action="http://WSS/NewWebService/guardarProcesoResponse" message="tns:guardarProcesoResponse" />
-</operation>
-<operation name="verFunyActivos">
-<input wsam:Action="http://WSS/NewWebService/verFunyActivosRequest" message="tns:verFunyActivos" />
-<output wsam:Action="http://WSS/NewWebService/verFunyActivosResponse" message="tns:verFunyActivosResponse" />
+<operation name="estadoCuenta">
+<input wsam:Action="http://WSS/NewWebService/estadoCuentaRequest" message="tns:estadoCuenta" />
+<output wsam:Action="http://WSS/NewWebService/estadoCuentaResponse" message="tns:estadoCuentaResponse" />
 </operation>
 <operation name="Bloquear">
 <input wsam:Action="http://WSS/NewWebService/BloquearRequest" message="tns:Bloquear" />
@@ -103,9 +95,17 @@
 <input wsam:Action="http://WSS/NewWebService/actualizaEstadoRequest" message="tns:actualizaEstado" />
 <output wsam:Action="http://WSS/NewWebService/actualizaEstadoResponse" message="tns:actualizaEstadoResponse" />
 </operation>
+<operation name="verFunyActivos">
+<input wsam:Action="http://WSS/NewWebService/verFunyActivosRequest" message="tns:verFunyActivos" />
+<output wsam:Action="http://WSS/NewWebService/verFunyActivosResponse" message="tns:verFunyActivosResponse" />
+</operation>
 <operation name="activosnoValidados">
 <input wsam:Action="http://WSS/NewWebService/activosnoValidadosRequest" message="tns:activosnoValidados" />
 <output wsam:Action="http://WSS/NewWebService/activosnoValidadosResponse" message="tns:activosnoValidadosResponse" />
+</operation>
+<operation name="mostrarActivosAValidar">
+<input wsam:Action="http://WSS/NewWebService/mostrarActivosAValidarRequest" message="tns:mostrarActivosAValidar" />
+<output wsam:Action="http://WSS/NewWebService/mostrarActivosAValidarResponse" message="tns:mostrarActivosAValidarResponse" />
 </operation>
 <operation name="Activosparaproceso">
 <input wsam:Action="http://WSS/NewWebService/ActivosparaprocesoRequest" message="tns:Activosparaproceso" />
@@ -129,7 +129,7 @@
 <soap:body use="literal" />
 </input>
 </operation>
-<operation name="estadoCuenta">
+<operation name="guardarProceso">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />
@@ -147,25 +147,7 @@
 <soap:body use="literal" />
 </output>
 </operation>
-<operation name="mostrarActivosAValidar">
-<soap:operation soapAction="" />
-<input>
-<soap:body use="literal" />
-</input>
-<output>
-<soap:body use="literal" />
-</output>
-</operation>
-<operation name="guardarProceso">
-<soap:operation soapAction="" />
-<input>
-<soap:body use="literal" />
-</input>
-<output>
-<soap:body use="literal" />
-</output>
-</operation>
-<operation name="verFunyActivos">
+<operation name="estadoCuenta">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />
@@ -192,7 +174,25 @@
 <soap:body use="literal" />
 </output>
 </operation>
+<operation name="verFunyActivos">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
 <operation name="activosnoValidados">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
+<operation name="mostrarActivosAValidar">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />
